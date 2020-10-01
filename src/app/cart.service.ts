@@ -26,4 +26,10 @@ export class CartService {
   getShippingPrices() {
     return this.http.get('/assets/shipping.json');
   }
+
+  dropFromCart(product) {
+    let produtoDeletar = this.items.indexOf(product);
+    this.items.splice(produtoDeletar,1);
+    return this.items;
+  }
 }
